@@ -1,0 +1,15 @@
+﻿生成启动时间为 2014/6/9 22:30:39。
+     1>项目“d:\我的文档\Visual Studio 2013\Projects\CGraph\CGraph\CGraph.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Microsoft Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "C:\Users\Frank-Shaw\Desktop\ThreeDObjTest\main.cpp"
+         main.cpp
+       Link:
+         D:\Microsoft Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\我的文档\Visual Studio 2013\Projects\CGraph\Debug\CGraph.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opencv_core247d.lib opencv_highgui247d.lib opencv_video247d.lib opencv_ml247d.lib opencv_legacy247d.lib opencv_imgproc247d.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\我的文档\Visual Studio 2013\Projects\CGraph\Debug\CGraph.pdb" /STACK:"0x10000000" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\我的文档\Visual Studio 2013\Projects\CGraph\Debug\CGraph.lib" /MACHINE:X86 Debug\LinearSolver.obj
+         Debug\main.obj
+         Debug\ThreeDObj.obj
+         CGraph.vcxproj -> d:\我的文档\Visual Studio 2013\Projects\CGraph\Debug\CGraph.exe
+     1>已完成生成项目“d:\我的文档\Visual Studio 2013\Projects\CGraph\CGraph\CGraph.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.11

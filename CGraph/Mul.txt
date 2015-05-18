@@ -1,0 +1,56 @@
+DWORD WINAPI Sum(LPVOID param)
+{
+	struct v * DATA = (struct v *) param;//强制转换，lpvoid->struct v
+	for (int i = DATA->col_start; i <= DATA->col_end; i++)
+		for (int j = 0; j < DATA->n; j++)
+			for (int k = 0; k < DATA->n; k++)
+				DATA->c[i*(DATA->n)+j] += DATA->a[i*(DATA->n)+k] * DATA->b[k*(DATA->n)+j];//计算A中某行×B中某列
+
+	return 0;
+}
+
+
+
+struct v
+{
+	int col_start;		//行开始
+	int col_end;		//行结束
+	int n;				//维度
+	int *a;//a矩阵
+	int *b;//b矩阵
+	int *c;//c矩阵
+};
+
+{
+const int numThreads = 2;
+
+int p = 0;										//p用于统计线程个数
+
+HANDLE *ThreadHandle = new HANDLE[numThreads];
+	int step = n / numThreads;
+
+	for (int i = 0; i < numThreads; i++)
+	{
+		v *data = new v;
+		if (i == numThreads - 1)
+		{
+			data->col_start = i*step;		//行号				
+			data->col_end = n-1;		//列号
+		}
+		else
+		{
+			data->col_start = i*step;		//行号				
+			data->col_end = step*(i+1)-1;		//列号
+			
+		}
+		data->n = n;
+		data->a = A;
+		data->b = B;
+		data->c = C;
+
+		ThreadHandle[p++] = CreateThread(NULL, 0, Sum, LPVOID(data), 0, NULL);//创建一个线程，并传入参数data
+
+	}
+
+	WaitForMultipleObjects(numThreads, ThreadHandle, TRUE, INFINITE);			//等待多线程全部执行
+}
